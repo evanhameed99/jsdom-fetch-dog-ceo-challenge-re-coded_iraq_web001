@@ -26,6 +26,7 @@ function  fetchDogBreeds(){
   .then(resp=> resp.json())
   .then(json=>{
     let dogBreedUl = document.querySelector('#dog-breeds');
+    let breedDropdown=document.querySelector('#breed-dropdown');
     for (const breed in json['message']){
       let breedLi = document.createElement('li');
       breedLi.innerText = breed;
@@ -33,9 +34,14 @@ function  fetchDogBreeds(){
 
       breedLi.addEventListener('click',()=>{
         breedLi.style.color = 'red';
-
       })
-
+      breedDropdown.addEventListener('change',event=>{
+      breedLi.remove();
+      if(breedLi.textContent.charAt(0)===event.target.value){
+        dogBreedUl.appendChild(breedLi);
+      }  
+      }
+      
     }
   })
 }
