@@ -14,6 +14,7 @@ fetch(imgUrl)
       let img =document.createElement('img');
       img.src=imgSrc;
       imgContainer.appendChild(img);
+      img.width = 100;
     }
 })
 
