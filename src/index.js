@@ -38,7 +38,7 @@ function  fetchDogBreeds(){
 
       breedDropdown.addEventListener('change', (event) =>{
         breedLi.remove();
-        if(breedLi.innerText.charAt(0)==event.target.value){
+        if(breedLi.innerText.charAt(0)===event.target.value){
 
           dogBreedUl.appendChild(breedLi);
 
