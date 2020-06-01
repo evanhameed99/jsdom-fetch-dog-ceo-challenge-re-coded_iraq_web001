@@ -39,9 +39,9 @@ function  fetchDogBreeds(){
       breedLi.remove();
       if(breedLi.textContent.charAt(0)===event.target.value){
         dogBreedUl.appendChild(breedLi);
-      }  
       }
-      
+      }
+
     }
   })
 }
