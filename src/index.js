@@ -35,7 +35,16 @@ function  fetchDogBreeds(){
       breedLi.addEventListener('click',()=>{
         breedLi.style.color = 'red';
       })
-    
+
+      breedDropdown.addEventListener('change', (event) =>{
+        breedLi.remove();
+        if(breedLi.innerText.charAt(0)==event.target.value){
+
+          dogBreedUl.appendChild(breedLi);
+
+        }
+      
+      })
 
 
 
