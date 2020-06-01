@@ -38,8 +38,8 @@ function  fetchDogBreeds(){
       let breedDropdown=document.querySelector('#breed-dropdown');
 
       breedDropdown.addEventListener('change',event=>{
-    breedLi.remove();
-      if(breedLi.textContent.charAt(0)===event.target.value){
+        breedLi.remove();
+      if(breedLi.innerText.charAt(0)==event.target.value){
        dogBreedUl.appendChild(breedLi);
       }
       }
