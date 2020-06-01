@@ -21,4 +21,5 @@ fetch(imgUrl)
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
+fetchImagesFromApi();
 })
