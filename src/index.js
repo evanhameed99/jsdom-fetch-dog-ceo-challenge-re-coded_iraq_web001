@@ -36,4 +36,5 @@ function  fetchDogBreeds(){
 window.addEventListener('DOMContentLoaded', ()=>{
 
 fetchImagesFromApi();
+fetchDogBreeds();
 })
