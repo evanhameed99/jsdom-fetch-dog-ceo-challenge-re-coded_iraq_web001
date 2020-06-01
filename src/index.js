@@ -36,8 +36,13 @@ function  fetchDogBreeds(){
       })
 
     }
+  }).then(json=>{
+
+    
   })
 }
+
+
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
