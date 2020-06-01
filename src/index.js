@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       breed.addEventListener('click', () => breed.style.color = 'red')
 
       breedDropdown.addEventListener('change', (event) => {
-        breed.remove();
+      //  breed.remove();
         if (breed.innerText.charAt(0) == event.target.value){
           breedContainer.appendChild(breed);
         }
