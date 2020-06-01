@@ -24,7 +24,7 @@ function  fetchDogBreeds(){
   fetch(breedUrl)
   .then(resp=> resp.json())
   .then(json=>{
-    let dogBreedUl = document.getElementById('dog-breeds');
+    let dogBreedUl = document.querySelector('#dog-breeds');
     for (const breed in json['message']){
       let breedLi = document.createElement('li');
       breedLi.innerText = breed;
