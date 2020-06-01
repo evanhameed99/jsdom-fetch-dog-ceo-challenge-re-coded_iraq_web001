@@ -1,6 +1,7 @@
 console.log('%c HI', 'color: firebrick');
 
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
+const breedUrl = 'https://dog.ceo/api/breeds/list/all';
 
 // fetching images from the api
 function fetchImagesFromApi(){
@@ -18,6 +19,19 @@ fetch(imgUrl)
 
 }
 
+function  fetchDogBreeds(){
+
+  fetch(breedUrl)
+  .then(resp=> resp.json())
+  .then(json=>{
+    let dogBreedUl = document.querySelector(#dog-breeds);
+    for (const breed in json['message']){
+      let breedLi = document.createElement('li');
+      breedLi.innerText = breed;
+      dogBreedUl.appendChild(breedLi);
+    }
+  })
+}
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
