@@ -35,14 +35,9 @@ function  fetchDogBreeds(){
       breedLi.addEventListener('click',()=>{
         breedLi.style.color = 'red';
       })
-      let breedDropdown=document.querySelector('#breed-dropdown');
+    
 
-      breedDropdown.addEventListener('change',(event)=>{
-        breedLi.remove();
-      if(breedLi.innerText.charAt(0)==event.target.value){
-       dogBreedUl.appendChild(breedLi);
-      }
-      }
+
 
     }
   })
