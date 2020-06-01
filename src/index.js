@@ -37,9 +37,6 @@ function  fetchDogBreeds(){
       })
 
     }
-  }).then(json=>{
-
-
   })
 }
 
