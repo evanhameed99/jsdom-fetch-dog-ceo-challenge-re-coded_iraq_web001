@@ -1,40 +1,51 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+console.log('%c HI', 'color: firebrick');
 
-  console.log('%c HI', 'color: firebrick')
+const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
+const breedUrl = 'https://dog.ceo/api/breeds/list/all';
 
-  const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
+// fetching images from the api
+function fetchImagesFromApi(){
 
-  fetch(imgUrl)
-  .then(response => response.json())
-  .then(result => {
-    let imgContainer = document.querySelector('#dog-image-container');
-    for (const element of result.message){
-      let img = document.createElement('img');
-      img.src = `${element}`;
-      img.width = "200";
+fetch(imgUrl)
+.then (resp => resp.json())
+.then( json => {
+    let imgContainer = document.getElementById('dog-image-container');
+    for (const imgSrc of json['message']){
+      let img =document.createElement('img');
+      img.src=imgSrc;
       imgContainer.appendChild(img);
     }
-  })
+})
 
-  const breedUrl = 'https://dog.ceo/api/breeds/list/all'
+}
+
+function  fetchDogBreeds(){
+
   fetch(breedUrl)
-  .then(response => response.json())
-  .then(result => {
-    let breedContainer = document.querySelector('#dog-breeds');
-    let breedDropdown = document.querySelector('#breed-dropdown');
-    for (const key in result.message){
-      let breed = document.createElement('li');
-      breed.classList.add('breed')
-      breed.innerText = key;
-      breedContainer.appendChild(breed);
-      breed.addEventListener('click', () => breed.style.color = 'red')
+  .then(resp=> resp.json())
+  .then(json=>{
+    let dogBreedUl = document.querySelector('#dog-breeds');
+    for (const breed in json['message']){
+      let breedLi = document.createElement('li');
+      breedLi.innerText = breed;
+      dogBreedUl.appendChild(breedLi);
 
-      breedDropdown.addEventListener('change', (event) => {
-      //  breed.remove();
-        if (breed.innerText.charAt(0) == event.target.value){
-          breedContainer.appendChild(breed);
-        }
+      breedLi.addEventListener('click',()=>{
+        breedLi.style.color = 'red';
+
       })
+
     }
+  }).then(json=>{
+
+
   })
+}
+
+
+
+window.addEventListener('DOMContentLoaded', ()=>{
+
+fetchImagesFromApi();
+fetchDogBreeds();
 })
