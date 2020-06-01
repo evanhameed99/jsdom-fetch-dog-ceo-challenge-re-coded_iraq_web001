@@ -29,6 +29,12 @@ function  fetchDogBreeds(){
       let breedLi = document.createElement('li');
       breedLi.innerText = breed;
       dogBreedUl.appendChild(breedLi);
+
+      breedLi.addEventListener('click',()=>{
+        breedLi.style.color = 'red';
+
+      })
+
     }
   })
 }
